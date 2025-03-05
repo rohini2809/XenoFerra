@@ -12,7 +12,7 @@ def build_network(glucose_conc, reaction_rates, fe3_adjusted_rate):
     G.add_node("Acetyl-CoA", concentration=0)
     G.add_node("TCA Cycle", concentration=0)
     G.add_node("ETC", concentration=0)
-    G.add_node("Fe3+ Rate", concentration=0)
+    G.add_node("Fe3+ Reduction", concentration=0)
     
     # Add edges for the metabolic pathway; for the Fe3+ reduction step, use the adjusted rate.
     G.add_edge("Glucose", "Pyruvate", reaction_rate=reaction_rates['GP'])
