@@ -12,7 +12,7 @@ def build_network(glucose_conc, reaction_rates, fe3_adjusted_rate):
     G.add_node("Acetyl-CoA", concentration=0)
     G.add_node("TCA Cycle", concentration=0)
     G.add_node("ETC", concentration=0)
-    G.add_node("Fe3+ Reduction", concentration=0)
+    G.add_node("Fe3+ Rate", concentration=0)
     
     # Add edges for the metabolic pathway; for the Fe3+ reduction step, use the adjusted rate.
     G.add_edge("Glucose", "Pyruvate", reaction_rate=reaction_rates['GP'])
@@ -97,8 +97,8 @@ st.subheader("Enhanced Metabolic Network")
 fig_network, ax_network = plt.subplots(figsize=(3, 3))
 pos = nx.spring_layout(G, seed=42)
 node_labels = {node: f"{node}\n({G.nodes[node]['concentration']})" for node, data in G.nodes(data=True)}
-nx.draw_networkx_nodes(G, pos, node_color='lightgreen', node_size=1000, ax=ax_network)
-nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=12, ax=ax_network)
+nx.draw_networkx_nodes(G, pos, node_color='lightgreen', node_size=800, ax=ax_network)
+nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=8, ax=ax_network)
 nx.draw_networkx_labels(G, pos, labels=node_labels, font_size=4, ax=ax_network)
 ax_network.set_title("Enhanced Metabolic Network with Martian Conditions")
 ax_network.axis('off')
