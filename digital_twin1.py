@@ -94,7 +94,7 @@ G = build_network(glucose_conc, reaction_rates, fe3_adjusted_rate)
 
 # Display the annotated metabolic network
 st.subheader("Enhanced Metabolic Network")
-fig_network, ax_network = plt.subplots(figsize=(6, 4))
+fig_network, ax_network = plt.subplots(figsize=(3, 3))
 pos = nx.spring_layout(G, seed=42)
 node_labels = {node: f"{node}\n({G.nodes[node]['concentration']})" for node, data in G.nodes(data=True)}
 nx.draw_networkx_nodes(G, pos, node_color='lightgreen', node_size=1200, ax=ax_network)
