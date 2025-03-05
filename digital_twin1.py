@@ -97,7 +97,7 @@ st.subheader("Enhanced Metabolic Network")
 fig_network, ax_network = plt.subplots(figsize=(3, 3))
 pos = nx.spring_layout(G, seed=42)
 node_labels = {node: f"{node}\n({G.nodes[node]['concentration']})" for node, data in G.nodes(data=True)}
-nx.draw_networkx_nodes(G, pos, node_color='lightgreen', node_size=1200, ax=ax_network)
+nx.draw_networkx_nodes(G, pos, node_color='lightgreen', node_size=1000, ax=ax_network)
 nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=20, ax=ax_network)
 nx.draw_networkx_labels(G, pos, labels=node_labels, font_size=9, ax=ax_network)
 ax_network.set_title("Enhanced Metabolic Network with Martian Conditions")
