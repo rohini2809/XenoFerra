@@ -4,3 +4,4 @@ matplotlib
 cobra
 torch
 torch-geometric
+pint
